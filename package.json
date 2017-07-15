@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "akulubala <akulubala@gmail.com>",
-  "private": true,
+  "private": false,
+  "main": "dist/static/js/app.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
