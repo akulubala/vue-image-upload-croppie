@@ -5,12 +5,12 @@
             <div class="vodal-header">Crop Image</div>
             <div id="croppie" class="vodal-body"></div>
             <div class="vodal-footer">
-              <button class="vodal-confirm-btn" @click="emitUpload">choose image</button>
-              <button class="vodal-cancel-btn" @click="cropeImage">confirm cutting</button>
+              <button class="vodal-cancel-btn" @click="emitUpload">choose image</button>
+              <button class="vodal-confirm-btn" @click="cropeImage">confirm cutting</button>
             </div>
             <input type="file" ref="upload" value="Choose a file" style="display:none" accept="image/*" v-on:change="setUpFileUploader">
         </vodal>
-        <button @click="showModal">modal</button>
+        <button @click="showModal" class="btn vodal-confirm-btn">Crop Image</button>
     </div>
 </div>
 </template>
@@ -161,20 +161,7 @@ input::-moz-focus-inner {
 }
 .container {
     width: 100%;
-}
-.title,
-.intro {
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-}
-.title {
-    font-size: 70px;
-    margin: 0;
-}
-.intro {
-    font-size: 30px;
-    margin: 15px 10px 20px;
+    text-align: center !important;
 }
 .btn-area {
     width: 600px;
