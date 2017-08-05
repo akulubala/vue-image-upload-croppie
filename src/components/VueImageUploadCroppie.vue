@@ -2,15 +2,15 @@
 <div class="wrap">
     <div class="container">
         <vodal :show="show" animation="fade" @hide="show = false" :height="height + 400" :width="width + 300">
-            <div class="vodal-header">Crop Image</div>
+            <div class="vodal-header">{{ trans['cropImage'] }}</div>
             <div id="croppie" class="vodal-body"></div>
             <div class="vodal-footer">
-              <button class="vodal-cancel-btn" @click="emitUpload">choose image</button>
-              <button class="vodal-confirm-btn" @click="cropeImage">confirm cutting</button>
+              <button class="vodal-cancel-btn" @click="emitUpload">{{ trans['chooseImage'] }}</button>
+              <button class="vodal-confirm-btn" @click="cropeImage">{{ trans['confirmCutting'] }}</button>
             </div>
             <input type="file" ref="upload" value="Choose a file" style="display:none" accept="image/*" v-on:change="setUpFileUploader">
         </vodal>
-        <button @click="showModal" class="btn vodal-confirm-btn">Crop Image</button>
+        <button @click="showModal" class="btn vodal-confirm-btn">{{ trans['cropImage'] }}</button>
     </div>
 </div>
 </template>
@@ -35,6 +35,16 @@ export default {
       'width': {
           type: Number,
           default: 200
+      },
+      'trans': {
+          type: Object,
+          default: function() {
+            return  { 
+              'cropImage': 'Crop Image', 
+              'chooseImage':'Choose Image', 
+              'confirmCutting': 'Confirm Cutting'
+            }
+          }
       }
     },
     data () {
